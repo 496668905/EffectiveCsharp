@@ -8,17 +8,18 @@ namespace EffectiveCsharp
         static void Main(string[] args)
         {
             Choujiang c = new Choujiang();
-            c.cj += c_ThresholdReached;
+            c.cj += c_choujiang;
 
-            Console.WriteLine("press 'a' key to increase total");
+            Console.WriteLine("请填写你的名字");
             string name = "";
             while ((name=Console.ReadLine())!="")
             {
                 c.CjFun(name);
+                 Console.WriteLine("请填写你的名字");
             }
         }
 
-        static void c_ThresholdReached(object sender, CjEventArg e)
+        static void c_choujiang(object sender, CjEventArg e)
         {
             Console.WriteLine($"{e.date}恭喜你中奖了");
             Environment.Exit(0);
